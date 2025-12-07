@@ -1,0 +1,293 @@
+@font-face {
+    font-family: 'Figtree';
+    src: url(assets/fonts/HankenGrotesk-VariableFont_wght.ttf) format('truetype');
+    font-weight: 500 800;
+    font-style: normal;
+}
+
+:root {
+    --Light-red: hsl(0, 100%, 67%);
+    --Orangey-yellow: hsl(39, 100%, 56%);
+    --Green-teal: hsl(166, 100%, 37%);
+    --Cobalt-blue: hsl(234, 85%, 45%);
+
+    --red-bc: hsl(0, 100%, 97%);
+    --yellow-bc: hsl(39, 100%, 97%);
+    --green-bc: hsl(166, 100%, 97%);
+    --blue-bc: hsl(234, 85%, 97%);
+
+    --Light-slate-blue-background: hsl(252, 100%, 67%);
+    --Light-royal-blue-background: hsl(241, 81%, 54%);
+
+    --Violet-blue-circle: hsla(256, 72%, 46%, 1);
+    --Persian-blue-circle: hsla(241, 72%, 46%, 0);
+
+    --White: hsl(0, 0%, 100%);
+    --Pale-blue: hsl(221, 100%, 96%);
+    --pale: hsl(221, 100%, 93%);
+    --Light-lavender: hsl(241, 100%, 89%);
+    --Dark-gray-blue: hsl(224, 30%, 27%);
+    --dark-gray: hsl(0, 0%, 50%);
+    --lavender: hsl(241, 100%, 80%);
+
+    --fs-regular: 18px;
+
+    --fw-regular: 500;
+    --fw-bold: 700;
+    --fw-bolder: 800;
+
+    --ff: 'Figtree', sans-serif;
+
+}
+
+
+/* 1. Use a more-intuitive box-sizing model */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+  margin: 0;
+}
+
+/* 3. Enable keyword animations */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
+}
+
+body {
+  /* 4. Add accessible line-height */
+  line-height: 1.5;
+  /* 5. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 6. Improve media defaults */
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 7. Inherit fonts for form controls */
+input, button, textarea, select {
+  font: inherit;
+}
+
+/* 8. Avoid text overflows */
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+/* 9. Improve line wrapping */
+p {
+  text-wrap: pretty;
+  line-height: 1.2;
+}
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+  line-height: 1;
+}
+
+/* css */
+body {
+  --card-higher: 100vh;
+  --card-width: 100%;
+
+  font-family: var(--ff);
+  font-size: var(--fs-regular);
+  font-weight: var(--fw-regular);
+  color: var(--White);
+
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  margin: 0;
+}
+
+.card {
+  background-color: var(--White);
+  display: grid;
+  overflow: hidden;
+  max-width: 650px;
+  max-width: 820px;
+}
+
+.result {
+  background: linear-gradient(var(--Light-slate-blue-background),var(--Light-royal-blue-background));
+  padding: 1.5rem 2.825rem 2.825rem 2.825rem;
+  border-radius: 0 0 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.score-part {
+  border-radius: 50%;
+  background: linear-gradient(var(--Violet-blue-circle),var(--Persian-blue-circle));
+  width: 9.5rem;
+  aspect-ratio: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.max-score {
+  color: var(--lavender);
+}
+
+.p2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.your-result,.text {
+  color: var(--Light-lavender);
+}
+
+.your-result {
+  font-weight: var(--fw-bold);
+
+}
+
+.score {
+  font-weight: var(--fw-bolder);
+  font-size: 3.825rem;
+
+}
+
+.summary {
+  background-color: var(--White);
+  color: var(--Dark-gray-blue);
+  padding: 2rem;
+  display: grid;
+  gap: 1.5rem;
+  font-weight: var(--fw-bold);
+}
+
+.title {
+  font-size: var(--fs-regular);
+  font-weight: var(--fw-bolder);
+}
+
+.flex>div {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.825rem;
+}
+
+.flex>div[data-icon="reaction"]::before {
+  background-image: url(assets/images/icon-reaction.svg);
+  content: '';
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+}
+
+.flex>div[data-icon="memory"]::before {
+  background-image: url(assets/images/icon-memory.svg);
+  content: '';
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+}
+
+.flex>div[data-icon="verbal"]::before {
+  background-image: url(assets/images/icon-verbal.svg);
+  content: '';
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+}
+
+.flex>div[data-icon="visual"]::before {
+  background-image: url(assets/images/icon-visual.svg);
+  content: '';
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+}
+
+.flex {
+  display: inline-flex;
+  justify-content: space-between;
+  padding: 0.825rem;
+  border-radius: 0.825rem;
+  align-items: center;
+}
+.num {
+  color: var(--Dark-gray-blue);
+}
+
+.percent {
+  color: var(--dark-gray);
+}
+
+.option {
+  display: grid;
+  gap: 1rem;
+}
+
+.group1 {
+  color: var(--Light-red);
+  background-color: var(--red-bc);
+}
+
+.group2 {
+  color: var(--Orangey-yellow);
+  background-color: var(--yellow-bc);
+}
+
+.group3 {
+  color: var(--Green-teal);
+  background-color: var(--green-bc);
+}
+
+.group4 {
+  color: var(--Cobalt-blue);
+  background-color: var(--blue-bc);
+}
+
+.button {
+  background-color: var(--Dark-gray-blue);
+  color: var(--White);
+  border-radius: 2rem;
+  padding: 0.825rem;
+  border: none;
+  cursor: pointer;
+}
+
+.button:is(:hover,:focus) {
+  background: linear-gradient(var(--Light-slate-blue-background),var(--Light-royal-blue-background));
+}
+
+@media (min-width: 650px) {
+  body {
+    background-color: var(--Pale-blue);
+  }
+
+  .card {
+    grid-template-columns: 1fr 1fr;
+    border-radius: 2rem;
+    max-width: 700px;
+    box-shadow: 1rem 1rem 2rem var(--pale);
+  }
+
+  .result {
+    border-radius: 2rem;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .text {
+    align-self: center;
+  }
+}
+

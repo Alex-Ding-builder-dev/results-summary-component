@@ -8,6 +8,8 @@
   
   <title>Frontend Mentor | Results summary component</title>
 
+  <link rel="stylesheet" href="style.css">
+
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
     .attribution { font-size: 11px; text-align: center; }
@@ -15,33 +17,76 @@
   </style>
 </head>
 <body>
-
-  Your Result
-  76
-  of 100
-
-  Great
-  You scored higher than 65% of the people who have taken these tests.
+<main>
   
-  Summary
+    <div class="card">
 
-  Reaction
-  80 / 100
+      <div class="result">
 
-  Memory
-  92 / 100
+        <p class="your-result">Your Result</p>
 
-  Verbal
-  61 / 100
+        <div class="score-part">
+          <h1 class="score">76</h1>
+          <p class="max-score">of 100</p>
+        </div>
 
-  Visual
-  72 / 100
+        <div class="p2">
+          <h2 class="great">Great</h2>
+          <p class="text">You scored higher than 65% of the people who have taken these tests.</p>
+        </div>
+      </div>
 
-  Continue
+      <div class="summary">
+
+        <h2 class="title">Summary</h2>
+
+        <div class="option">
+
+          <div class="flex group1">
+            <div class="reaction" data-icon="reaction">Reaction</div>
+
+            <p class="onlyscore">
+              <span class="num">80</span>
+              <span class="percent">/ 100</span>
+            </p>
+
+          </div>
+
+          <div class="flex group2">
+            <div class="memory" data-icon="memory">Memory</div>
+
+            <p class="onlyscore">
+              <span class="num">92</span>
+               <span class="percent">/ 100</span>
+            </p>
+          </div>
+
+          <div class="flex group3">
+            <div class="verbal" data-icon="verbal">Verbal</div>
+
+            <p class="onlyscore">
+              <span class="num">61</span>
+               <span class="percent">/ 100</span>
+            </p>
+
+          </div>
+
+          <div class="flex group4">
+            <div class="visual" data-icon="visual">Visual</div>
+
+            <p class="onlyscore">
+              <span class="num">72</span>
+               <span class="percent">/ 100</span>
+            </p>
+          </div>
+
+        </div>
+
+        <button class="button">Continue</button>
+
+      </div>
+    </div>
   
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+</main>
 </body>
 </html>
